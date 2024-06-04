@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Unvc样例效果展示</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <!-- Custom Font Icons CSS-->
+  <link rel="stylesheet" href="css/landy-iconfont.css">
+  <!-- Google fonts - Open Sans-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+  <!-- owl carousel-->
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="icon" type="image/png"
+    href="img/DALL·E 2024-05-06 10.58.08 - A simple and minimalistic logo design for 'UnVC', a voice anti-spoofing technology, incorporating a scientific and technological aesthetic. The logo s.png">
+  <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  <style>.block {
+    margin-bottom: 20px; /* 调整这个值来增加或减少间距 */
+}</style>
+</head>
+
+<body>
+  <!-- navbar-->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top"><a href="index.html" class="navbar-brand">Unvc</a>
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto align-items-start align-items-lg-center">
+
+        </ul>
+        <!-- <div class="navbar-text">
+          <a href="#" data-toggle="modal" data-target="#exampleModal"
+            class="btn btn-primary navbar-btn btn-shadow btn-gradient">Sign Up</a>
+        </div> -->
+      </div>
+    </nav>
+  </header>
+  <!-- Modal-->
+  <section>
+    <div class="container">
+      <div class="row block">
+        <div class="col-lg-9">
+          <ul class="breadcrumb">
+            
+          </ul>
+          <h1>音频防御样例效果展示</h1>
+            
+        </div>
+      </div>
+      <div class="block">
+        <blockquote class="blockquote">
+          <p class="mb-0">UnVC是由我们团队所设计的一种具有优良性能的语音伪造主动防御技术，该技术在最终的隐蔽性、破坏性、鲁棒性和泛化性上均取得了良好的效果。在这里我们分别展示了使用 <strong>AntiFake 方法（一种Baseline现有技术）的防御音频</strong>，和<strong>UnVC 方法（我们团队设计）的防御音频</strong>的示例对比，旨在向您展示我们技术所体现的功能与成果。此外，我们特别增加鲁棒性测试部分，分别展示了AntiFake 和 UnVC
+            方法对<strong>不同破坏手段</strong>的鲁棒性防御效果对比，旨在更好展示我们防御技术良好的鲁棒性。</p>
+          
+        </blockquote>
+      </div>
+      <h2 style="margin-top: 60px; margin-bottom: 15px;">原始克隆攻击</h2>
+      <p>未经防御的原始音频，能被语音克隆模型轻而易举提取音色，合成或转换为以原始音频为音色的伪造音频。</p>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>原始音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              
+              <audio controls>
+                <source src="examples_audios/example1/source.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+          <div class="arrow">↓</div>
+        
+          <h4>克隆音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              
+              <audio controls>
+                <source src="examples_audios/example1/source_infer.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+         
+        
+          
+        </div>
+        <h2 style="margin-top: 60px; margin-bottom: 15px;">主动防御对比</h2>
+        <p>经过防御的原始音频，不能被语音克隆模型轻而易举提取音色，从而不能合成或转换为以原始音频为音色的伪造音频。而我们所设计的UnVC防御音频具备更良好的自然度和更低的噪声，可用性更强。</p>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>防御音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake/protected.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours/source-unvc-05281100.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          
+          
+        
+          <div class="arrow">↓</div>
+        
+          <h4>克隆音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake_infer/protected.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours_infer/source-unvc-05281100.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+         
+        
+          
+        </div>
+
+        <div class="block">
+          <blockquote class="blockquote">
+            <p class="mb-0">鲁棒性测试部分，分别展示了AntiFake 和 UnVC
+              方法对<strong>不同破坏手段</strong>的鲁棒性防御效果对比。</p>
+            
+          </blockquote>
+        </div>
+        <h2 style="margin-top: 60px; margin-bottom: 15px;">鲁棒性测试（剪裁）</h2>
+        <p>分别对两种技术的防御音频进行剪裁操作，继而测试防御效果，不难发现我们所设计的UnVC防御音频相比于AntiFake技术，依旧保持更为良好的防御效果。</p>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>防御音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake/protected-crop.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours/source-unvc-05281100-test-crop.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          
+          
+        
+          <div class="arrow">↓</div>
+        
+          <h4>克隆音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake_infer/protected-unvc-test-crop.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours_infer/source-unvc-05281100-test-crop.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>  
+        </div>
+
+        <h2 style="margin-top: 60px; margin-bottom: 15px;">鲁棒性测试（重采样）</h2>
+        <p>分别对两种技术的防御音频进行重采样，继而测试防御效果，不难发现我们所设计的UnVC防御音频相比于AntiFake技术，依旧保持更为良好的防御效果。</p>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>防御音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake/protected-resampled.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours/source-unvc-05281100-resampled.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          
+          
+        
+          <div class="arrow">↓</div>
+        
+          <h4>克隆音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake_infer/protected-resampled.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours_infer/source-unvc-05281100-resampled.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+         
+        
+          
+        </div>
+        <h2 style="margin-top: 60px; margin-bottom: 15px;">鲁棒性测试（噪声）</h2>
+        <p>分别对两种技术的防御音频添加噪声操作，继而测试防御效果，不难发现我们所设计的UnVC防御音频相比于AntiFake技术，依旧保持更为良好的防御效果。</p>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>防御音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake/protected-noise-uniform.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours/source-unvc-05281100-noise-uniform.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          
+          
+        
+          <div class="arrow">↓</div>
+        
+          <h4>克隆音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake_infer/protected-noise-uniform.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours_infer/source-unvc-05281100-noise-uniform.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+         
+        
+          
+        </div>
+        <h2 style="margin-top: 60px; margin-bottom: 15px;">鲁棒性测试（mp3格式压缩，比特率32K）</h2>
+        <p>分别对两种技术的防御音频进行mp3压缩操作，比特率为32K，继而测试防御效果，不难发现我们所设计的UnVC防御音频相比于AntiFake技术，依旧保持更为良好的防御效果。</p>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>防御音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake/protect-mp3com-32k.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours/source-unvc-05281100-mp3com.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          
+          
+        
+          <div class="arrow">↓</div>
+        
+          <h4>克隆音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake_infer/protected-mp3com.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours_infer/source-unvc-05281100-mp3com.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+         
+        
+          
+        </div>
+        <h2 style="margin-top: 60px; margin-bottom: 15px;">鲁棒性测试（acc格式压缩，比特率32K）</h2>
+        <p>分别对两种技术的防御音频进行acc压缩操作，比特率为32K，继而测试防御效果，不难发现我们所设计的UnVC防御音频相比于AntiFake技术，依旧保持更为良好的防御效果。</p>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>防御音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake/protected-aaccom-32k.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御音频</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours/source-unvc-05281100-aaccom.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+          
+          
+        
+          <div class="arrow">↓</div>
+        
+          <h4>克隆音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>AntiFake防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/antifake_infer/protected-aaccom.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>UnVC防御效果</p>
+              <audio controls>
+                <source src="examples_audios/example1/ours_infer/source-unvc-05281100-aaccom.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+         
+        
+          
+        </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Javascript files-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"> </script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="js/front.js"></script>
+</body>
+
+</html>
